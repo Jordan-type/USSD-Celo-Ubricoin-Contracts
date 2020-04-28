@@ -19,6 +19,7 @@ contract AccessPhone is Ownable {
   }
 
   constructor() public {
+
   }
 
   // Register is how the users register from their smart contract
@@ -30,15 +31,15 @@ contract AccessPhone is Ownable {
     return true;
   }
 
-  function getUserPhoneNumber(address _addr) view public returns(string memory) {
+  function getUserPhoneNumber(address _addr) public pure  returns(string memory) {
     return users[_addr].phoneNumber;
   }
 
-  function getFromPhoneNumberToAddress(string calldata _phoneNumber) external view returns(address) {
+  function getFromPhoneNumberToAddress(string calldata _phoneNumber) external pure returns(address) {
     return fromPhoneNumberToAddress[_phoneNumber];
   }
   
-  function checkPasswordValid(string memory _phoneNumber, bytes memory _password) public view returns(bool) {
+  function checkPasswordValid(string memory _phoneNumber, bytes memory _password) public pure returns(bool) {
     address userAddress = fromPhoneNumberToAddress[_phoneNumber];
     require(userAddress != address(0), "user does not exist");
 
@@ -73,7 +74,7 @@ contract AccessPhone is Ownable {
     // TODO need to remove the password here!
   }
 
-  function getUserBalance(address _addr, address _tokenAddress) public view returns(uint256) {
+  function getUserBalance(address _addr, address _tokenAddress) public pure returns(uint256) {
     return users[_addr].balances[_tokenAddress];
   }
 
