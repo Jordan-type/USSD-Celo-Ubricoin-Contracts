@@ -1,5 +1,8 @@
 // "truffle-plugin-blockscout-verify": "git+https://github.com/celo-org/truffle-plugin-blockscout-verify#91627b3",
 
+Details of smart contract deployed in alfajores network
+=======================================================
+
 truffle migrate --network alfajores
 
 Compiling your contracts...
