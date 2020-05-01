@@ -33,5 +33,7 @@ module.exports = {
             provider: kit.web3.currentProvider,
             network_id: 44786
         }
-    }
+    },
+
+    plugins: ['truffle-security', 'truffle-plugin-blockscout-verify']
 };
